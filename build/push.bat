@@ -1,1 +1,1 @@
-dotnet nuget push artifacts\Kamen\bin\Kamen.%1.symbols.nupkg -s http://nuget.amp.vg -k %NUGET_API_KEY%
+dotnet nuget push artifacts\Kamen\bin\Kamen.*.symbols.nupkg -s http://nuget.amp.vg -k %NUGET_API_KEY%
