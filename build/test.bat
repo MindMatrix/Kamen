@@ -1,0 +1,1 @@
+dotnet test tests\Kamen.Tests\Kamen.Tests.csproj --no-build -c Release
