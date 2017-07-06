@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <RuntimeIdentifiers>win7-x64;win10-x64</RuntimeIdentifiers>  
+    <TargetFrameworks>netcoreapp1.0;netcoreapp1.1;netstandard1.3;netstandard1.4;net45;net46</TargetFrameworks>
+    <BaseIntermediateOutputPath>..\..\artifacts\obj</BaseIntermediateOutputPath>
+    <OutputPath>..\..\artifacts\bin\$(Configuration)</OutputPath>
+    <GeneratePackageOnBuild Condition="$(Configuration) == 'Release'">True</GeneratePackageOnBuild>
+    <IncludeSymbols Condition="$(Configuration) == 'Release'">True</IncludeSymbols>
+    <Authors>Chris Phillips</Authors>
+    <Company>MindMatrix</Company>
+    <Product>Kamen (Common)</Product>
+    <Description>Common utils and helpers</Description>
+    <Copyright>2017</Copyright>
+    <RepositoryUrl>https://github.com/MindMatrix/Kamen</RepositoryUrl>
+    <RepositoryType></RepositoryType>
+    <PackageIconUrl>https://github.com/MindMatrix/Kamen</PackageIconUrl>
+    <PackageTags>Kamen Common Utils Misc</PackageTags>
+  </PropertyGroup>
+
+</Project>
