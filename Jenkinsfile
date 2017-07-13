@@ -13,6 +13,7 @@ pipeline {
                 }
                 sh 'echo "FOO is $FOO"'
                 sh 'echo "FOO is $VERSION"'
+                echo VersionNumber([versionNumberString : '1.0.${BUILD_ID}', projectStartDate : '2017-01-01'])
             }
         }
     }
