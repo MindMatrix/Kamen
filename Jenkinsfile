@@ -10,7 +10,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                bat 'set'
+                bat 'echo "$VERSION"'
             }
         }
         stage('Test') {
