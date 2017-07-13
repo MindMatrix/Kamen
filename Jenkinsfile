@@ -13,5 +13,25 @@ pipeline {
                 bat "build\\clean ${VERSION}"
             }
         }
+        stage("restore") {
+            steps {        
+                bat "build\\restore ${VERSION}"
+            }
+        }        
+        stage("build") {
+            steps {        
+                bat "build\\restore ${VERSION}"
+            }
+        }        
+        stage("test") {
+            steps {        
+                bat "build\\restore ${VERSION}"
+            }
+        }        
+        stage("pack") {
+            steps {        
+                bat "build\\restore ${VERSION}"
+            }
+        }        
     }
 }
