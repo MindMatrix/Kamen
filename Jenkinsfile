@@ -1,18 +1,19 @@
 pipeline {
     agent any
     environment {
-        HELLO = VersionNumber([
-            versionNumberString : '${BUILD_YEAR}.${BUILD_MONTH}.${BUILD_ID}',
-            projectStartDate : '2017-01-01'
-        ])
+        VERSION_MAJOR = "1"
+        VERSION_MINOR = "0"
     }
     stages {
+        stage('Setup'){
+            steps{
+                def v = VersionNumber([versionNumberString : '$(VERSION_MAJOR).$(VERSION_MINOR).${BUILD_ID}', projectStartDate : '2017-01-01'])
+                bat 'set VERSION = $v'
+            }
+        }
         stage('Build') {
             steps {
-                echo VersionNumber([
-            versionNumberString : '${BUILD_YEAR}.${BUILD_MONTH}.${BUILD_ID}',
-            projectStartDate : '2017-01-01'
-        ])
+                echo '$VERSION'
             }
         }
         stage('Test') {
