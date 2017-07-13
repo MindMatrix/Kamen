@@ -7,10 +7,8 @@ pipeline {
         stage('Build') {
             steps {
                 echo '%VERSION%'
-                echo '$VERSION'
-                echo '$(VERSION)'
-                echo $env.VERSION
-                echo $VERSION
+                echo '$env.VERSION'
+                echo '$(e,vVERSION)'
             }
         }
         stage('Test') {
