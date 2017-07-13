@@ -5,12 +5,13 @@ pipeline {
             versionNumberString : '${BUILD_YEAR}.${BUILD_MONTH}.${BUILD_ID}',
             projectStartDate : '2017-01-01'
         ]);
+        HELLO = "WORLD"
     }
 
     stages {
         stage('Build') {
             steps {
-                bat 'echo "$VERSION"'
+                bat 'set'
             }
         }
         stage('Test') {
