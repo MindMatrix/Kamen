@@ -6,10 +6,14 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo '%VERSION%'
-                echo '$env.VERSION'
-                echo '$(VERSION}'
-                echo '$(env.VERSION}'
+                bat 'echo %VERSION%'
+                bat 'echo $env.VERSION'
+                bat 'echo ${VERSION}'
+                bat 'echo $(VERSION)'
+                bat 'echo $(VERSION}'
+                bat 'echo $(env.VERSION)'
+                bat 'echo ${env.VERSION}'
+                bat 'echo $(env.VERSION}'
             }
         }
         stage('Test') {
