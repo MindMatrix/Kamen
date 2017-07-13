@@ -10,6 +10,7 @@ pipeline {
                 echo '$env.VERSION'
                 echo '${VERSION}'
                 echo '${env.VERSION}'
+                echo '${BUILD_ID}'
             }
         }
         stage('Test') {
