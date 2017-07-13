@@ -1,10 +1,16 @@
 pipeline {
     agent any
+    environment {
+        VERSION = VersionNumber([
+            versionNumberString : '${BUILD_YEAR}.${BUILD_MONTH}.${BUILD_ID}',
+            projectStartDate : '2017-01-01'
+        ]);
+    }
 
     stages {
         stage('Build') {
             steps {
-                echo 'Building..'
+                echo 'Building.. $VERSION'
             }
         }
         stage('Test') {
