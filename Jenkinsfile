@@ -10,7 +10,6 @@ pipeline {
                 sh 'echo $VERSION'
                 sh 'echo ${VERSION}'
                 sh 'echo $(VERSION)'
-                sh 'echo $(VERSION}'
                 sh 'echo $(env.VERSION)'
                 sh 'echo ${env.VERSION}'
                 sh 'echo $(env.VERSION}'
