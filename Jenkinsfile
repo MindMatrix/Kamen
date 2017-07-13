@@ -8,7 +8,7 @@ pipeline {
             steps {
                 echo '%VERSION%'
                 echo '$env.VERSION'
-                echo '$(e,vVERSION)'
+                echo '${VERSION}'
             }
         }
         stage('Test') {
