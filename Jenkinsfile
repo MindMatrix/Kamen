@@ -1,8 +1,8 @@
 pipeline {
     agent any
     environment {
-        VERSION_MAJOR = "1",
-        VERSION_MINOR = "0"
+        VERSION_MAJOR = '1'
+        VERSION_MINOR = '0'
     }
     stages {
         stage('Setup'){
