@@ -1,7 +1,7 @@
 pipeline {
     environment {
         FOO = "BAR"
-        VERSION = VersionNumber([versionNumberString : "1.0.${BUILD_ID}", projectStartDate : '2017-01-01'])
+        VERSION = "1.0.${BUILD_ID}"
     }
 
     agent { label "master" }
