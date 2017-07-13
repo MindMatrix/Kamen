@@ -18,7 +18,6 @@ pipeline {
                 echo '%VERSION%'
                 echo '$VERSION'
                 echo '$(VERSION)'
-                echo $(VERSION)
                 echo $VERSION
             }
         }
