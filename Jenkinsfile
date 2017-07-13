@@ -10,12 +10,12 @@ pipeline {
                 script{
                     def v = VersionNumber([versionNumberString : '$(VERSION_MAJOR).$(VERSION_MINOR).${BUILD_ID}', projectStartDate : '2017-01-01'])
                 }
-                bat 'set VERSION = $v'
+                bat 'set VERSION = $(v)'
             }
         }
         stage('Build') {
             steps {
-                echo '$VERSION'
+                echo '%VERSION%'
             }
         }
         stage('Test') {
