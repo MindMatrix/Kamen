@@ -9,6 +9,7 @@ pipeline {
         stage("foo") {
             steps {
                 sh 'echo "FOO is $FOO"'
+                sh 'echo "FOO is $VERSION"'
             }
         }
     }
