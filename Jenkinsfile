@@ -7,7 +7,9 @@ pipeline {
     stages {
         stage('Setup'){
             steps{
-                def v = VersionNumber([versionNumberString : '$(VERSION_MAJOR).$(VERSION_MINOR).${BUILD_ID}', projectStartDate : '2017-01-01'])
+                script{
+                    def v = VersionNumber([versionNumberString : '$(VERSION_MAJOR).$(VERSION_MINOR).${BUILD_ID}', projectStartDate : '2017-01-01'])
+                }
                 bat 'set VERSION = $v'
             }
         }
