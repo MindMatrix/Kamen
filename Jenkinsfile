@@ -1,10 +1,10 @@
+
 pipeline {
+    agent any
+
     environment {
-        FOO = "BAR"
         VERSION = "1.0.${BUILD_ID}"
     }
-
-    agent { label "master" }
 
     stages {
         stage("clean") {
