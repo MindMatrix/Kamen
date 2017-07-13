@@ -9,7 +9,7 @@ pipeline {
         stage('Setup'){
             steps{
                 script{
-                    VERSION = VersionNumber([versionNumberString : '1.0.${BUILD_ID}', projectStartDate : '2017-01-01'])
+                    VERSION = VersionNumber([versionNumberString : '$(env.VERSION_MAJOR).$(env.VERSION_MINOR).${BUILD_ID}', projectStartDate : '2017-01-01'])
                 }
             }
         }
@@ -18,7 +18,7 @@ pipeline {
                 echo '%VERSION%'
                 echo '$VERSION'
                 echo '$(VERSION)'
-                echo $VERSION
+                echo $env.VERSION
             }
         }
         stage('Test') {
