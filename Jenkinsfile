@@ -10,7 +10,7 @@ pipeline {
         stage("clean") {
             steps {        
                 echo 'Build version ' + VersionNumber([versionNumberString : "${VERSION}", projectStartDate : '2017-01-01'])
-                bat "build\clean ${VERSION}"
+                bat "build\\clean ${VERSION}"
             }
         }
     }
