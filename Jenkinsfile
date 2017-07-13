@@ -20,17 +20,17 @@ pipeline {
         }        
         stage("build") {
             steps {        
-                bat "build\\restore ${VERSION}"
+                bat "build\\build ${VERSION}"
             }
         }        
         stage("test") {
             steps {        
-                bat "build\\restore ${VERSION}"
+                bat "build\\test ${VERSION}"
             }
         }        
         stage("pack") {
             steps {        
-                bat "build\\restore ${VERSION}"
+                bat "build\\pack ${VERSION}"
             }
         }        
     }
