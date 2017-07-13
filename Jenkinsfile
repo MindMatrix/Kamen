@@ -9,7 +9,7 @@ pipeline {
         stage('Setup'){
             steps{
                 script{
-                    VERSION = VersionNumber([versionNumberString : '$(VERSION_MAJOR).$(VERSION_MINOR).${BUILD_ID}', projectStartDate : '2017-01-01'])
+                    VERSION = VersionNumber([versionNumberString : '1.0.${BUILD_ID}', projectStartDate : '2017-01-01'])
                 }
             }
         }
