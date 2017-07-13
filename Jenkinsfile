@@ -11,7 +11,6 @@ pipeline {
             steps {
                 sh 'echo "FOO is $FOO"'
                 sh 'echo "FOO is $VERSION"'
-                echo VersionNumber([versionNumberString : "${VERSION}", projectStartDate : '2017-01-01'])
             }
         }
     }
