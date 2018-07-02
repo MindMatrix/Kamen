@@ -1,1 +1,1 @@
-dotnet nuget push src\bin\MindMatrix.Kamen.%1.symbols.nupkg -s https://nuget.amp.vg -k %NUGET_API_KEY%
+copy src\bin\Release\MindMatrix.Kamen.%1.nupkg D:\nuget\packages
