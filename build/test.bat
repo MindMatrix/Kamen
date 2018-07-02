@@ -1,1 +1,1 @@
-dotnet test tests\Kamen.Tests\Kamen.Tests.csproj --no-build -c Release
+dotnet test tests\MindMatrix.Kamen.Tests.csproj --no-build -c Release

@@ -1,3 +1,3 @@
-FOR /D /r %%G in ("artifacts\Kamen\obj\Release\*") DO gitlink "artifacts\Kamen\obj\Release\%%~nxG\Kamen.pdb"
-FOR /D /r %%G in ("artifacts\Kamen\bin\*") DO gitlink "artifacts\Kamen\bin\%%~nxG\Kamen.pdb"
-dotnet pack source\Kamen\Kamen.csproj --include-symbols --no-build -c Release /p:VERSION=%1
+FOR /D /r %%G in ("src\obj\Release\*") DO gitlink "src\obj\Release\%%~nxG\MindMatrix.Kamen.pdb"
+FOR /D /r %%G in ("src\bin\*") DO gitlink "src\bin\%%~nxG\MindMatrix.Kamen.pdb"
+dotnet pack src\Kamen\MindMatrix.Kamen.csproj --include-symbols --no-build -c Release /p:VERSION=%1
