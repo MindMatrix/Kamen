@@ -4,6 +4,11 @@ namespace Kamen.FileSystem
 {
     public static class Directory
     {
+        public static string Test(string test)
+        {
+            return test;
+        }
+
         public static string FindWithParents(string basePath, string directory)
         {
             foreach (var path in Parents(basePath, true))
