@@ -1,1 +1,1 @@
-dotnet pack src\Kamen\MindMatrix.Kamen.csproj --no-build -c Release /p:VERSION=%1
+dotnet pack src\MindMatrix.Kamen.csproj --no-build -c Release /p:VERSION=%1
