@@ -1,1 +1,2 @@
+git -xfd
 dotnet clean 
