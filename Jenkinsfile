@@ -37,7 +37,7 @@ pipeline {
         stage("push") {
             steps {        
                 withCredentials([string(credentialsId: 'NUGET_API_KEY', variable: 'KEY')]) {
-                    bat "dotnet nuget push src\\bin\\MindMatrix.Kamen.${VERSION}.nupkg -s https://nuget.amp.vg -k ${KEY}"
+                    bat "dotnet nuget push src\\bin\\Release\\MindMatrix.Kamen.${VERSION}.nupkg -s https://nuget.amp.vg -k ${KEY}"
                 }
             }
         }        
