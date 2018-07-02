@@ -4,6 +4,7 @@ pipeline {
     agent any
 
     environment {
+        PROJECT = "MindMatrix.Kamen"
         VERSION = "1.0.${BUILD_ID}"
     }
 
@@ -11,33 +12,34 @@ pipeline {
         stage("clean") {
             steps {        
                 echo 'Build version ' + VersionNumber([versionNumberString : "${VERSION}", projectStartDate : '2017-01-01'])
-                bat "build\\clean ${VERSION}"
+                bat "git clean -xfd"
+                bat "dotnet clean"
             }
         }
         stage("restore") {
             steps {        
-                bat "build\\restore ${VERSION}"
+                bat "dotnet restore"
             }
         }        
         stage("build") {
             steps {        
-                bat "build\\build ${VERSION}"
+                bat "dotnet build -c Release /p:VERSION=${VERSION} /p:SourceLinkCreate=true"
             }
         }        
         stage("test") {
             steps {        
-                bat "build\\test ${VERSION}"
+                bat "dotnet test tests\\${PROJECT}.Tests.csproj --no-build -c Release"
             }
         }        
         stage("pack") {
             steps {        
-                bat "build\\pack ${VERSION}"
+                bat "dotnet pack src\\${PROJECT}.csproj --no-build -c Release /p:VERSION=${VERSION}"
             }
         }        
         stage("push") {
             steps {        
                 withCredentials([string(credentialsId: 'NUGET_API_KEY', variable: 'KEY')]) {
-                    bat "dotnet nuget push src\\bin\\Release\\MindMatrix.Kamen.${VERSION}.nupkg -s https://nuget.amp.vg -k ${KEY}"
+                    bat "dotnet nuget push src\\bin\\Release\\${PROJECT}.${VERSION}.nupkg -s https://nuget.amp.vg -k ${KEY}"
                 }
             }
         }        
