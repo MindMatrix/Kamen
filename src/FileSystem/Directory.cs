@@ -8,9 +8,9 @@ namespace Kamen.FileSystem
         {
             foreach (var path in Parents(basePath, true))
             {
-                var installsPath = System.IO.Path.Combine(path, directory);
-                if (System.IO.Directory.Exists(installsPath))
-                    return installsPath;
+                var parentDirectory = System.IO.Path.Combine(path, directory);
+                if (System.IO.Directory.Exists(parentDirectory))
+                    return parentDirectory;
             }
 
             return null;
