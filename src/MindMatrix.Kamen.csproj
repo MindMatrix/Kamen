@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
@@ -13,7 +13,18 @@
     <RepositoryUrl>https://github.com/MindMatrix/Kamen</RepositoryUrl>
     <RepositoryType></RepositoryType>
     <PackageIconUrl>https://github.com/MindMatrix/Kamen</PackageIconUrl>
-    <PackageTags>Kamen Common Utils Misc</PackageTags>    
-  </PropertyGroup>
+    <PackageTags>Kamen Common Utils Misc</PackageTags>
 
+    <!-- Optional: Declare that the Repository URL can be published to NuSpec -->
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+
+    <!-- Optional: Embed source files that are not tracked by the source control manager to the PDB -->
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+
+    <!-- Optional: Include PDB in the built .nupkg -->
+    <AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0-beta-62925-02" PrivateAssets="All"/>
+  </ItemGroup>
 </Project>
