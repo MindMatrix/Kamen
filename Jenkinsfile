@@ -34,5 +34,10 @@ pipeline {
                 bat "build\\pack ${VERSION}"
             }
         }        
+        stage("push") {
+            steps {        
+                bat "build\\push ${VERSION}"
+            }
+        }        
     }
 }
