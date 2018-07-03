@@ -4,18 +4,13 @@ namespace Kamen.FileSystem
 {
     public static class Directory
     {
-        public static string Test(string test)
-        {
-            return test;
-        }
-
         public static string FindWithParents(string basePath, string directory)
         {
             foreach (var path in Parents(basePath, true))
             {
-                var parentDirectory = System.IO.Path.Combine(path, directory);
-                if (System.IO.Directory.Exists(parentDirectory))
-                    return parentDirectory;
+                var installsPath = System.IO.Path.Combine(path, directory);
+                if (System.IO.Directory.Exists(installsPath))
+                    return installsPath;
             }
 
             return null;
